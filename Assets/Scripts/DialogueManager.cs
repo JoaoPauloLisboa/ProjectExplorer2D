@@ -23,17 +23,8 @@ public class DialogueManager : MonoBehaviour
 	void Update ()
     {
       
-        if (dialogActive && (Input.touchCount > 0 || Input.GetKeyDown(KeyCode.Space)))
-        {
-            currentLine++;
-            
-        }
-        if(currentLine >= dialogLines.Length)
-        {
-            dBox.SetActive(false);
-            dialogActive = false;
-            currentLine = 0;
-        }
+        
+        
 
         dText.text = dialogLines[currentLine];
 	}
@@ -47,7 +38,23 @@ public class DialogueManager : MonoBehaviour
 
     public void ShowDialogue()
     {
-        dialogActive = true;
+        print("ShowDialog");
         dBox.SetActive(true);
+        dialogActive = true;
+        
+    }
+
+    public void CloseDialog()
+    {
+        if (dialogActive)
+        {
+            currentLine++;
+        }
+        if (currentLine >= dialogLines.Length)
+        {
+            dBox.SetActive(false);
+            dialogActive = false;
+            currentLine = 0;
+        }
     }
 }

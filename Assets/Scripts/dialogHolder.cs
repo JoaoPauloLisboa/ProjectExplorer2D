@@ -5,13 +5,13 @@ using UnityEngine;
 public class dialogHolder : MonoBehaviour
 {
     public string dialogue;
-    private DialogueManager dMan;
+    public DialogueManager dMan;
     public string[] dialogueLines;
 
 	// Use this for initialization
 	void Start ()
     {
-        dMan = FindObjectOfType<DialogueManager>();
+        //dMan = FindObjectOfType<DialogueManager>();
 	}
 	
 	// Update is called once per frame
@@ -21,10 +21,12 @@ public class dialogHolder : MonoBehaviour
 	}
     private void OnTriggerStay2D(Collider2D other)
     {
+        
         if (other.gameObject.name == "player")
         {
             if(!dMan.dialogActive)
             {
+                print(other.name);
                 dMan.dialogLines = dialogueLines;
                 dMan.currentLine = 0;
                 dMan.ShowDialogue();

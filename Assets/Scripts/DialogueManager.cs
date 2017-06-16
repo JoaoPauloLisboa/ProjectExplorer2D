@@ -22,10 +22,6 @@ public class DialogueManager : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
     {
-      
-        
-        
-
         dText.text = dialogLines[currentLine];
 	}
 
@@ -55,6 +51,7 @@ public class DialogueManager : MonoBehaviour
             dBox.SetActive(false);
             dialogActive = false;
             currentLine = 0;
+            playerMovement.froze = false;
         }
     }
 }

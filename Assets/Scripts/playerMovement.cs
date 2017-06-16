@@ -8,6 +8,7 @@ public class playerMovement : MonoBehaviour
 	Rigidbody2D rbody;
 	public static Animator anim;
     public static Vector2 movement_vector;
+    public static bool froze = false;
 
     // Use this for initialization
     void Start ()
@@ -35,11 +36,11 @@ public class playerMovement : MonoBehaviour
         }
         rbody.MovePosition(rbody.position + movement_vector * Time.deltaTime);        
 #else
-        if (Input.touchCount > 0)
+        if (Input.touchCount > 0 && Input.touchCount < 2 )
         {
             Touch touch = Input.GetTouch(0); // reconhece o primeiro touch
 
-            if (touch.phase == TouchPhase.Stationary || touch.phase == TouchPhase.Moved)
+            if ((touch.phase == TouchPhase.Stationary || touch.phase == TouchPhase.Moved) && froze == false )
             {
                 anim.SetBool("iswalking", true);
                 // touchposition para pixels do cel
@@ -56,4 +57,5 @@ public class playerMovement : MonoBehaviour
         }
 #endif
     }
+
 }

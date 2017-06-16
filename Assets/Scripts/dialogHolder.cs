@@ -11,26 +11,37 @@ public class dialogHolder : MonoBehaviour
 	// Use this for initialization
 	void Start ()
     {
-        //dMan = FindObjectOfType<DialogueManager>();
+
 	}
 	
 	// Update is called once per frame
 	void Update ()
     {
-		
+        onTouchObjeto();
 	}
-    private void OnTriggerStay2D(Collider2D other)
+   
+    private void onTouchObjeto()
     {
-        
-        if (other.gameObject.name == "player")
+        for (var i = 0; i < Input.touchCount; ++i)
         {
-            if(!dMan.dialogActive)
+            if (Input.GetTouch(i).phase == TouchPhase.Began)
             {
-                print(other.name);
-                dMan.dialogLines = dialogueLines;
-                dMan.currentLine = 0;
-                dMan.ShowDialogue();
-                
+                RaycastHit2D hitInfo = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.GetTouch(i).position), Vector2.zero);
+                // RaycastHit2D can be either true or null, but has an implicit conversion to bool, so we can use it like this
+                if (hitInfo)
+                {
+                    if (!dMan.dialogActive)
+                    {
+                        dMan.dialogLines = dialogueLines;
+                        dMan.currentLine = 0;
+                        dMan.ShowDialogue();
+                        
+                    }
+                    if(dMan.dialogActive)
+                    {
+                        playerMovement.froze = true;
+                    }
+                }
             }
         }
     }

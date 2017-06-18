@@ -9,12 +9,29 @@ public class playerMovement : MonoBehaviour
 	public static Animator anim;
     public static Vector2 movement_vector;
     public static bool froze = false;
+	AudioSource source;
 
     // Use this for initialization
-    void Start ()
+	void Awake() {
+		source = GetComponent<AudioSource>();
+	}
+	void Start ()
     {
 		rbody = GetComponent<Rigidbody2D> ();
 		anim = GetComponent<Animator> ();
+	}
+	void StartSound() {
+		if(!source.isPlaying) {
+			Debug.Log("tocando");
+			source.Play();
+		}
+	}
+
+	void PauseSound() {
+		if(source.isPlaying) {
+			source.Stop();
+			Debug.Log("parando");
+		}
 	}
 
     // Update is called once per frame
@@ -25,6 +42,7 @@ public class playerMovement : MonoBehaviour
 #if UNITY_ENGINE || UNITY_STANDALONE || UNITY_WEBPLAYER
         if (movement_vector != Vector2.zero)
         {
+			StartSound();
             anim.SetBool("iswalking", true);
             anim.SetFloat("input_x", movement_vector.x);
             anim.SetFloat("input_y", movement_vector.y);
@@ -33,7 +51,10 @@ public class playerMovement : MonoBehaviour
         else
         {
             anim.SetBool("iswalking", false);
+			PauseSound();
         }
+		//ControlaSom(){
+//}
         rbody.MovePosition(rbody.position + movement_vector * Time.deltaTime);        
 #else
         if (Input.touchCount > 0 && Input.touchCount < 2 )

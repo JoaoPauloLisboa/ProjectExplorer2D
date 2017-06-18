@@ -6,7 +6,8 @@ using UnityEngine.UI;
 public class InventoryMenu : MonoBehaviour {
 
 	public GameObject Panel;
-	public bool inventoryOpen = false;
+    public bool inventoryOpen = false;
+    
 
 	public void showHideInventory (){
 		if(inventoryOpen){
@@ -20,8 +21,8 @@ public class InventoryMenu : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		Panel.gameObject.SetActive (false);
-	}
+        Panel.gameObject.SetActive(false);
+    }
 	
 	// Update is called once per frame
 	void Update () {

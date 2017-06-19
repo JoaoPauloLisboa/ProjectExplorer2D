@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class playerMovement : MonoBehaviour
 {
-	Rigidbody2D rbody;
+    Rigidbody2D rbody;
 	public static Animator anim;
     public static Vector2 movement_vector;
     public static bool froze = false;

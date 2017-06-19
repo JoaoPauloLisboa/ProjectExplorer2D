@@ -34,10 +34,8 @@ public class DialogueManager : MonoBehaviour
 
     public void ShowDialogue()
     {
-        print("ShowDialog");
         dBox.SetActive(true);
         dialogActive = true;
-        
     }
 
     public void CloseDialog()

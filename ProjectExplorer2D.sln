@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2017
+# Visual Studio 2015
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectExplorer2D", "ProjectExplorer2D.csproj", "{D1187999-1D61-59A1-3756-AD22D4FC5D36}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectExplorer2D.Editor", "ProjectExplorer2D.Editor.csproj", "{3C981748-7B29-681A-1C6C-8A3B602988C6}"

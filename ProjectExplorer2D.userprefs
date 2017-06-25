@@ -1,8 +1,9 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\InventoryMenu.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\QuestManager.cs">
     <Files>
-      <File FileName="Assets\Scripts\InventoryMenu.cs" Line="14" Column="39" />
+      <File FileName="Assets\Scripts\moneySystem.cs" Line="28" Column="44" />
+      <File FileName="Assets\Scripts\QuestManager.cs" Line="36" Column="24" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

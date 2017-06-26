@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Mapa Com Colisao Editada.unity
+- path: Assets/Menu Principal.unity
   isLoaded: 1
   isActive: 1

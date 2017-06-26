@@ -1,11 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour {
 
 	public void Iniciar(){
-		//Application.LoadLevel ("Mapa Com Colisao Editada");
+		SceneManager.LoadScene ("Mapa Com Colisao Editada");
 	}
 
 	public void SairDoJogo(){
